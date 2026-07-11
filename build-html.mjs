@@ -395,13 +395,15 @@ const html = `<!doctype html>
       position: relative;
       margin: 28px 0;
       padding: 24px 24px 28px;
-      overflow: auto;
+      overflow-x: auto;
+      overflow-y: visible;
       color: oklch(25% 0.025 60);
       background: var(--code);
       border-radius: var(--radius-md);
       box-shadow: inset 0 0 0 1px var(--line);
       line-height: 1.68;
-      overscroll-behavior: contain;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
     }
     pre code { padding: 0; background: transparent; border-radius: 0; font-size: 13px; }
     .copy-code {
