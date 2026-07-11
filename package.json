@@ -1,0 +1,15 @@
+{
+  "name": "poem-formula",
+  "version": "1.0.0",
+  "description": "《意象的帝国》错配写诗方法论网站",
+  "scripts": {
+    "test": "npm run build",
+    "build": "node build-html.mjs"
+  },
+  "homepage": "https://holynova.github.io/poem-formula/",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "marked": "^18.0.6"
+  }
+}
