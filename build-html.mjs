@@ -58,6 +58,10 @@ const renderer = {
 
 marked.use({ renderer, gfm: true, breaks: false });
 const articleHtml = marked.parse(markdown);
+const unresolvedBoldMarkers = articleHtml.match(/\*\*[^*]+\*\*/g) ?? [];
+if (unresolvedBoldMarkers.length) {
+  throw new Error(`未渲染的 Markdown 加粗标记：${unresolvedBoldMarkers.join(", ")}`);
+}
 const title = stripInlineMarkdown(markdown.match(/^#\s+(.+)$/m)?.[1] ?? "意象的帝国：写诗方法论");
 
 const desktopToc = outline
