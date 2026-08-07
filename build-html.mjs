@@ -84,6 +84,14 @@ const html = `<!doctype html>
   <meta name="description" content="从《意象的帝国》中提炼以错配为核心的现代诗写作方法，包括四种公式、关联校准、意象平衡与整诗结构。">
   <meta name="color-scheme" content="light">
   <title>${title}</title>
+  <script
+    defer
+    src="https://cloud.umami.is/script.js"
+    data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"
+    data-domains="holynova.github.io"
+    data-exclude-search="true"
+    data-exclude-hash="true"
+  ></script>
   <style>
     :root {
       --canvas: oklch(96.8% 0.009 78);
