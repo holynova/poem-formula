@@ -2,7 +2,10 @@ import fs from "node:fs";
 import { marked } from "marked";
 
 const sourcePath = new URL("./意象的帝国_写诗方法论.md", import.meta.url);
-const outputPath = new URL("./index.html", import.meta.url);
+const outputPaths = [
+  new URL("./index.html", import.meta.url),
+  new URL("./dist/index.html", import.meta.url),
+];
 const markdown = fs.readFileSync(sourcePath, "utf8");
 const repositoryUrl = "https://github.com/holynova/poem-formula";
 
@@ -607,5 +610,8 @@ const html = `<!doctype html>
 </body>
 </html>`;
 
-fs.writeFileSync(outputPath, html);
-console.log(`Generated ${outputPath.pathname}`);
+fs.mkdirSync(new URL("./dist/", import.meta.url), { recursive: true });
+for (const outputPath of outputPaths) {
+  fs.writeFileSync(outputPath, html);
+}
+console.log(`Generated ${outputPaths.map((outputPath) => outputPath.pathname).join(" and ")}`);
