@@ -1,5 +1,103 @@
-# 诗歌公式
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="诗歌公式 — 月亮与钥匙被一条虚线桥缝合：把遥远的事物以一线关联产生触动">
+</p>
 
-![截图](assets/readme-screenshot.png)
+<p align="center">
+  <a href="https://xiaosang.cc/poem-formula/">▶ 在线阅读 Read Online</a>
+  ·
+  <a href="https://github.com/holynova/poem-formula">GitHub 仓库</a>
+</p>
 
-[Repo](https://github.com/holynova/poem-formula) · [Pages](https://holynova.github.io/poem-formula/)
+诗歌公式是黄梵《意象的帝国》写诗课的方法论提炼网站：以"错配"为核心，把全书压缩成可执行的写作方法——从现实中取一个可感的场景，把熟悉的事物与一个低相关事物并置，制造陌生感；再用两者之间的一点真实关联，使陌生感变得准确；最后用客观意象、重复、象征、隐喻或结构，把局部诗意组织成整首诗。10 个章节，6 张解释插图。
+
+Poem Formula is a methodology site distilling Huang Fan's poetry course *《意象的帝国》* (The Empire of Images) around one core idea — "mismatch" （错配）: take a tangible scene, juxtapose something familiar with something lowly related to create estrangement, then ground it with one real link between them so the estrangement becomes precise, and finally organize local poetic moments into a whole poem with objective images, repetition, symbolism, metaphor, or structure. 10 chapters, 6 explanatory illustrations.
+
+> 说明：以下页码均指 PDF 文件页码，不是纸书印刷页码。报告区分"书中明确提出的观点"和"为生成器所做的工程化归纳"。
+
+## 截图 / Screenshots
+
+<p align="center">
+  <img src="./assets/readme/screenshot-site.jpg" width="720" alt="网站首页：深色标题区《意象的帝国》写诗方法论，左侧目录，右侧正文从第一章全书的核心结论开始">
+</p>
+
+## 核心公式 / The Core Formula
+
+```
+诗意强度 ≈ 语义距离 × 可感关联 × 情感真实性
+```
+
+- **语义距离**负责"陌生"：A 与 B 要相距足够远，否则只是日常搭配，没有新鲜感。
+- **可感关联**负责"准确"：A 与 B 又必须存在一点可感的关联，否则只是语言游戏，容易晦涩、空洞。
+- **情感真实性**负责"触动"。
+
+**例子。**"雨是城市忘在窗外的一串钥匙"有距离（雨和钥匙不属同一领域），也有可感关联（两者都能发出连续、细碎的敲击声，且都悬在门窗之外）。若只写"雨是悲伤"，则距离不足，也没有可见的场景。
+
+## 内容目录 / Contents
+
+| 章节 | 主题 |
+|---|---|
+| 一 | 全书的核心结论 |
+| 二 | 全书方法论的三层结构（写作过程 / 诗句发动机 / 整首诗的组织） |
+| 三 | "错配"的本质 |
+| 四 | 四种公式的统一解释 |
+| 五 | 把"错配"从随机拼接升级为可控生成 |
+| 六 | 从一句公式扩展为一首短诗 |
+| 七 | 质量控制：判定"好错配"还是"乱搭" |
+| 八 | 对用户所给四公式提示词的修订建议 |
+| 九 | 可直接使用的优化版提示词 |
+| 十 | 最终判断 |
+
+## 四种公式 / Four Patterns
+
+| 模式 | 形式 | 说明 |
+|---|---|---|
+| ① 错搭替换 | `S(A) → S(A的B)` | 把 A 的修饰语换成 B 的 |
+| ② 强制等同 | `A是B` | 直接断言 A 就是 B |
+| ③ 用 B 重新解释 A | — | 借 B 的视角重看 A |
+| ④ 让 A 做 A 做不到的事 | — | 赋予 A 超出其本性的动作 |
+
+## 质量门与三道闸门 / Quality Gate
+
+每个候选意象按六项内部评分，每项 0–2 分：距离、关联、具体、准确、增益、整体。**低于 8 分不进入终稿**。必须淘汰的情形包括：A 与 B 本是固定搭配、两者都是抽象概念、换成任意名词句子都差不多、后文直接解释"这象征着……"、一首短诗堆入许多彼此无关的华丽意象。
+
+忠于本书的方法不只有四个生成公式，还必须有三道闸门：
+
+```
+错配生成 → 关联校准 → 整体组织与修改
+```
+
+四个公式是发动机；关联是真正的方向盘；客观意象、结构和修改则是车身与道路。
+
+## 网站技术 / Tech
+
+- 内容源是 `意象的帝国_写诗方法论.md`（387 行），构建脚本 `build-html.mjs` 用 `marked` 把它渲染成单文件 `index.html`（8.5 MB，6 张插图以 base64 内嵌，离线可读）。
+- 网站带桌面端与移动端目录导航（自动从二级/三级标题生成，滚动高亮当前章节）。
+- 唯一依赖是 `marked`；构建可复现（本地实测输出与仓库内 `index.html` 字节数一致）。
+
+```bash
+npm install
+npm run build   # node build-html.mjs，生成 index.html
+npm test        # 等同于 npm run build
+```
+
+```
+意象的帝国_写诗方法论.md   内容源：10 章节方法论（387 行）
+build-html.mjs             构建脚本：marked 渲染 + 插图 base64 内嵌 + 目录生成
+index.html                 构建产物：单文件网站（8.5 MB）
+assets/poem-formula-illustrations/   6 张解释插图（小黑主题）
+assets/readme-screenshot.png         旧 README 截图（已重命名为 .jpg 复用）
+```
+
+## English
+
+**Poem Formula** is a methodology site distilling Huang Fan's poetry course *《意象的帝国》* around "mismatch" （错配）: juxtapose something familiar with something distant to create estrangement, ground it with one real, felt link so the estrangement becomes precise, then organize the result into a whole poem.
+
+- **Core formula**: poetic intensity ≈ semantic distance × felt connection × emotional truth. Distance creates estrangement; connection creates precision; emotional truth creates resonance.
+- **Contents** (10 chapters): the book's core conclusion; the three-layer methodology (generate → judge → revise; objective vs. subjective images as the poem's engine; organizing principles); the nature of mismatch; four formula patterns; upgrading mismatch from random collage to controlled generation; expanding one formula into a short poem; quality control; revised prompt advice; a ready-to-use optimized prompt; final judgment.
+- **Four patterns**: ① mismatched substitution `S(A) → S(A's B)`; ② forced identity `A is B`; ③ reinterpreting A through B; ④ making A do what A cannot do.
+- **Quality gate**: each candidate image scores 0–2 on six criteria (distance, connection, concreteness, accuracy, insight gain, coherence); below 8/12 it never reaches the final draft. Three gates govern the whole method: mismatch generation → connection calibration → organization and revision.
+- **Tech**: content lives in a 387-line Markdown file; `build-html.mjs` renders it with `marked` into a single self-contained `index.html` (8.5 MB, 6 illustrations embedded as base64, readable offline), with auto-generated desktop/mobile table of contents. Only dependency is `marked`; `npm run build` reproduces the committed file byte-for-byte (verified locally).
+
+## 许可 / License
+
+MIT（见 `package.json`；本仓库未附 LICENSE 文件）。
