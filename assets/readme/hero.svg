@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="title desc">
+  <title id="title">诗歌公式 Poem Formula — 《意象的帝国》写诗方法论：以错配为核心</title>
+  <desc id="desc">深褐底标题：诗歌公式；右侧月亮与钥匙被一条虚线桥缝合，示意把遥远的事物以一线关联产生触动。</desc>
+
+  <rect width="1200" height="360" rx="26" fill="#1a1512"/>
+
+  <g id="title-block" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="56" y="62" font-size="19" letter-spacing="3" fill="#d9a07a">POETRY WRITING NOTES · 诗歌写作笔记</text>
+    <text x="56" y="128" font-size="58" font-weight="700" fill="#f5efe6">诗歌公式</text>
+    <text x="56" y="168" font-size="23" fill="#f5efe6">《意象的帝国》写诗方法论：以“错配”为核心</text>
+    <text x="56" y="204" font-size="19" fill="#d9c9b8">诗意强度 ≈ 语义距离 × 可感关联 × 情感真实性</text>
+    <g id="chips" font-size="18" fill="#f5efe6" text-anchor="middle">
+      <g><rect x="56" y="238" width="126" height="36" rx="18" fill="#2a211b" stroke="#4a3a2c" stroke-width="1.5"/><text x="119" y="262">10 个章节</text></g>
+      <g><rect x="194" y="238" width="150" height="36" rx="18" fill="#2a211b" stroke="#4a3a2c" stroke-width="1.5"/><text x="269" y="262">6 张解释插图</text></g>
+      <g><rect x="356" y="238" width="126" height="36" rx="18" fill="#2a211b" stroke="#4a3a2c" stroke-width="1.5"/><text x="419" y="262">4 种公式</text></g>
+      <g><rect x="494" y="238" width="154" height="36" rx="18" fill="#2a211b" stroke="#4a3a2c" stroke-width="1.5"/><text x="571" y="262">单文件 8.5 MB</text></g>
+    </g>
+  </g>
+
+  <g id="bridge" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <g id="moon">
+      <circle cx="830" cy="130" r="42" fill="#f5e6c8"/>
+      <circle cx="816" cy="118" r="8" fill="#e3d3ac"/>
+      <circle cx="842" cy="142" r="6" fill="#e3d3ac"/>
+      <circle cx="828" cy="146" r="4" fill="#e3d3ac"/>
+    </g>
+    <g id="key" fill="#d9a07a">
+      <circle cx="1018" cy="130" r="17" fill="none" stroke="#d9a07a" stroke-width="7"/>
+      <rect x="1032" y="124" width="72" height="12" rx="6"/>
+      <rect x="1088" y="136" width="8" height="18" rx="3"/>
+      <rect x="1072" y="136" width="8" height="14" rx="3"/>
+    </g>
+    <path d="M 872 138 Q 950 196 1000 142" fill="none" stroke="#d9a07a" stroke-width="2.5" stroke-dasharray="8 6" stroke-linecap="round"/>
+    <circle cx="950" cy="172" r="7" fill="#d9a07a"/>
+    <g font-size="18" fill="#d9c9b8" text-anchor="middle">
+      <text x="830" y="208">月亮</text>
+      <text x="1050" y="208">钥匙</text>
+    </g>
+    <text x="950" y="300" font-size="18" fill="#d9c9b8" text-anchor="middle">把遥远的事物缝合，以一线关联产生触动</text>
+  </g>
+</svg>
