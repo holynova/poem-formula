@@ -98,12 +98,11 @@ const html = `<!doctype html>
       --paper: oklch(99.7% 0.003 75);
       --ink: oklch(22% 0.015 58);
       --muted: oklch(49% 0.018 62);
-      --faint: oklch(73% 0.014 68);
+      --faint: oklch(55% 0.014 68);
       --line: oklch(87% 0.013 72);
-      --accent: oklch(55% 0.15 38);
-      --accent-soft: oklch(94% 0.035 48);
-      --blue: oklch(56% 0.105 245);
-      --code: oklch(95.3% 0.012 70);
+      --accent: oklch(53% 0.17 25);
+      --accent-soft: oklch(94% 0.035 25);
+            --code: oklch(95.3% 0.012 70);
       --serif: "Songti SC", "Noto Serif SC", STSong, SimSun, serif;
       --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -139,7 +138,7 @@ const html = `<!doctype html>
       background: var(--ink);
       border-radius: var(--radius-sm);
       font-family: var(--sans);
-      font-size: 14px;
+      font-size: 13px;
       transform: translateY(-160%);
       transition: transform 160ms ease-out;
     }
@@ -175,7 +174,7 @@ const html = `<!doctype html>
     }
     .eyebrow {
       margin: 0 0 18px;
-      color: oklch(78% 0.095 51);
+      color: oklch(78% 0.05 25);
       font-family: var(--sans);
       font-size: 13px;
       font-weight: 650;
@@ -201,7 +200,7 @@ const html = `<!doctype html>
     .masthead-meta strong {
       display: block;
       color: var(--paper);
-      font-size: 24px;
+      font-size: 26px;
       line-height: 1;
       font-variant-numeric: tabular-nums;
     }
@@ -215,7 +214,7 @@ const html = `<!doctype html>
       border: 1px solid oklch(92% 0.015 70 / .28);
       border-radius: var(--radius-sm);
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       text-decoration: none;
       transition-property: color, background-color, transform;
@@ -237,19 +236,20 @@ const html = `<!doctype html>
       box-shadow: 0 1px 0 var(--line);
       font-family: var(--sans);
     }
-    .mobile-tools details { width: 100%; }
+    .mobile-tools details { flex: 1; min-width: 0; }
+    .mobile-tools .print-button { flex: none; margin-left: 8px; }
     .mobile-tools summary {
       min-height: 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 650;
       list-style: none;
     }
     .mobile-tools summary::-webkit-details-marker { display: none; }
-    .mobile-tools summary::after { content: "＋"; color: var(--accent); font-size: 20px; }
+    .mobile-tools summary::after { content: "＋"; color: var(--accent); font-size: 26px; }
     .mobile-tools details[open] summary::after { content: "－"; }
     .mobile-toc {
       display: grid;
@@ -261,7 +261,7 @@ const html = `<!doctype html>
       align-items: center;
       text-decoration: none;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .page-shell {
@@ -284,7 +284,7 @@ const html = `<!doctype html>
     .sidebar-label {
       margin: 0 0 14px;
       color: var(--faint);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .14em;
     }
@@ -302,7 +302,7 @@ const html = `<!doctype html>
       transition-duration: 150ms;
       transition-timing-function: ease-out;
     }
-    .toc-depth-3 { padding-left: 24px; font-size: 12px; color: oklch(57% 0.016 64); }
+    .toc-depth-3 { padding-left: 24px; font-size: 13px; color: oklch(57% 0.016 64); }
     .toc-link.active { color: var(--accent); background: var(--accent-soft); }
     .toc-link.active::before {
       content: "";
@@ -341,7 +341,6 @@ const html = `<!doctype html>
       min-width: 0;
       padding: 56px clamp(26px, 5vw, 72px) 110px;
       background: var(--paper);
-      box-shadow: 0 14px 50px oklch(28% 0.02 55 / .08);
     }
     article { max-width: var(--content); margin: 0 auto; }
     article > h1 { display: none; }
@@ -353,7 +352,7 @@ const html = `<!doctype html>
       color: var(--muted);
       border-bottom: 1px solid var(--line);
       font-family: var(--sans);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.75;
     }
     article blockquote:not(:first-of-type) {
@@ -367,7 +366,7 @@ const html = `<!doctype html>
       margin: 82px 0 28px;
       padding-top: 20px;
       border-top: 1px solid var(--line);
-      font-size: clamp(27px, 3.2vw, 35px);
+      font-size: 26px;
       line-height: 1.32;
       font-weight: 700;
     }
@@ -384,7 +383,7 @@ const html = `<!doctype html>
     h3 {
       margin: 46px 0 18px;
       font-family: var(--sans);
-      font-size: 21px;
+      font-size: 18px;
       line-height: 1.45;
       font-weight: 700;
     }
@@ -393,11 +392,11 @@ const html = `<!doctype html>
     li::marker { color: var(--accent); font-family: var(--sans); font-weight: 700; }
     code {
       padding: .15em .38em;
-      color: oklch(40% 0.09 35);
+      color: oklch(40% 0.09 25);
       background: var(--code);
       border-radius: 4px;
       font-family: var(--mono);
-      font-size: .86em;
+      font-size: 13px;
     }
     pre {
       position: relative;
@@ -423,12 +422,11 @@ const html = `<!doctype html>
       padding: 7px 10px;
       color: var(--muted);
       background: var(--paper);
-      border: 0;
+      border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      box-shadow: 0 1px 4px oklch(25% 0.02 60 / .12);
       cursor: pointer;
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 13px;
       transition-property: color, transform;
       transition-duration: 140ms;
     }
@@ -436,7 +434,7 @@ const html = `<!doctype html>
     .table-wrap { margin: 30px 0; overflow-x: auto; box-shadow: inset 0 -1px 0 var(--line); }
     table { width: 100%; min-width: 740px; border-collapse: collapse; font-family: var(--sans); font-size: 13px; line-height: 1.6; }
     th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-    th { color: var(--muted); background: var(--code); font-size: 12px; font-weight: 700; }
+    th { color: var(--muted); background: var(--code); font-size: 13px; font-weight: 700; }
     td:first-child { white-space: nowrap; font-weight: 700; }
     .article-figure { margin: 42px calc((var(--content) - min(820px, 80vw)) / 2); }
     .article-figure img {
@@ -452,7 +450,7 @@ const html = `<!doctype html>
       margin-top: 10px;
       color: var(--faint);
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 13px;
       line-height: 1.6;
       text-align: center;
     }
@@ -460,9 +458,9 @@ const html = `<!doctype html>
       margin-top: 42px;
       padding: 28px 0 0;
       border-top: 1px solid var(--line);
-      font-size: 20px;
+      font-size: 18px;
     }
-    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     @media (hover: hover) {
       .toc-link:hover, .print-button:hover { color: var(--ink); background: oklch(93.5% 0.014 72); }
@@ -473,7 +471,7 @@ const html = `<!doctype html>
       .masthead-inner { grid-template-columns: 1fr; gap: 26px; }
       .masthead-side { padding-bottom: 0; }
       .masthead-meta { display: flex; gap: 10px; align-items: baseline; }
-      .masthead-meta strong { display: inline; font-size: 20px; }
+      .masthead-meta strong { display: inline; }
       .mobile-tools { display: flex; }
       .page-shell { width: 100%; display: block; }
       .sidebar { display: none; }
@@ -482,15 +480,13 @@ const html = `<!doctype html>
       .article-figure img { width: 100%; }
     }
     @media (max-width: 560px) {
-      body { font-size: 17px; line-height: 1.78; }
+      body { line-height: 1.78; }
       .masthead { padding: 42px 20px 34px; }
-      .masthead h1 { font-size: 35px; }
-      .eyebrow { margin-bottom: 12px; font-size: 11px; }
+      .eyebrow { margin-bottom: 12px; }
       main { padding: 34px 20px 70px; }
-      h2 { margin-top: 66px; font-size: 27px; }
-      h3 { margin-top: 38px; font-size: 19px; }
+      h2 { margin-top: 66px; }
+      h3 { margin-top: 38px; }
       pre { margin-inline: -8px; padding: 54px 16px 22px; border-radius: var(--radius-sm); }
-      pre code { font-size: 12px; }
       figcaption { text-align: left; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -524,11 +520,11 @@ const html = `<!doctype html>
   <header class="masthead">
     <div class="masthead-inner">
       <div>
-        <p class="eyebrow">POETRY WRITING NOTES · 诗歌写作笔记</p>
+        <p class="eyebrow">诗歌写作笔记</p>
         <h1>${title}</h1>
       </div>
       <div class="masthead-side">
-        <p class="masthead-meta"><strong>10</strong> 个章节 · 6 张解释插图<br>从诗句发动机到整诗结构</p>
+        <p class="masthead-meta"><strong>10</strong> 个章节，6 张解释插图<br>从诗句发动机到整诗结构</p>
         <p class="masthead-links"><a href="${repositoryUrl}" target="_blank" rel="noreferrer">查看 GitHub 仓库 ↗</a></p>
       </div>
     </div>
@@ -539,11 +535,12 @@ const html = `<!doctype html>
       <summary>浏览章节</summary>
       <div class="mobile-toc">${mobileToc}</div>
     </details>
+    <button class="print-button" type="button" onclick="window.print()">打印</button>
   </nav>
 
   <div class="page-shell">
     <aside class="sidebar" aria-label="文章目录">
-      <p class="sidebar-label">CONTENTS · 目录</p>
+      <p class="sidebar-label">目录</p>
       <nav class="toc-nav">${desktopToc}</nav>
       <div class="sidebar-actions"><button class="print-button" type="button" onclick="window.print()">打印或存为 PDF</button></div>
     </aside>
